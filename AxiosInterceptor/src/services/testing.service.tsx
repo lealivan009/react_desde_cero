@@ -2,7 +2,7 @@ import axios from "axios";
 import { getInLocalStorage, LocalStorageKeys } from "../utilities";
 
 export const testingService = () => {
-  return axios.get("https://rickandmortyapi.com/api/character/2");
+  return axios.get("http://localhost:8080/reunionvirtual/listarsalasactivas?idCuenta=3");
 };
 
 export const refreshToken = () => {
