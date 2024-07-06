@@ -9,8 +9,16 @@ export const saveInLocalStorage = (key: string, value: string) => {
 
 export const getInLocalStorage = (key: string) => {
   const result = localStorage.getItem(key);
-  return !!result && JSON.parse(result);
+  if (!result) {
+    return null;
+  }
+  try {
+    return JSON.parse(result);
+  } catch (e) {
+    return result;
+  }
 };
+
 
 export const clearLocalStorage = () => {
   localStorage.clear();
